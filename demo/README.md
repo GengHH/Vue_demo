@@ -26,4 +26,7 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
     2.此时只包含webpack,webpack-dev-server,vue,vue-template-compiler,babel简单的功能
 
 ##20190418
-    1.添加HtmlWebpackPlugin插件，主要是build时候生成新的index.html    
+    1.添加HtmlWebpackPlugin插件，主要是build时候生成新的index.html   
+
+##20190413
+    1.新建一个test分支，用来测试使用。
