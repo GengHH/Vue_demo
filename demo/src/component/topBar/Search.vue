@@ -2,11 +2,11 @@
   <div id="search-box">
     <!-- <h3>{{searchBoxMsg}}</h3> -->
     <el-row id='search-box-row'>
-      <el-col :span="16">
+      <el-col :span="20">
         <el-input v-model="searchBoxValue" placeholder="请输入查询条件"></el-input>
       </el-col>
-      <el-col :span="8">
-        <el-button type="info" icon="el-icon-search" @click="search" :loadding="true">搜索</el-button>
+      <el-col :span="4">
+        <el-button icon="el-icon-search" @click="search" circle></el-button>
       </el-col>
     </el-row>
   </div>
@@ -39,6 +39,9 @@ export default {
 #search-box-row{
     width: 100%;
     height:45px;
+}
+.el-button.is-circle{
+  border-radius: 4px;
 }
 </style>
 

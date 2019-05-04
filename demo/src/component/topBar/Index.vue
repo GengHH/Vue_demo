@@ -2,13 +2,14 @@
   <div id="top-box">
     <!-- <h2>{{inputProp}}</h2> -->
     <el-row id="photo">
-      <el-col :span="12">
-        <img src="../../assets/logo.png">
+      <el-col :span="16">
+        <img src="../../assets/favicon.png">
+        <NvaBox></NvaBox>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="4">
         <SearchBox searchBoxMsg="hahahahah"></SearchBox>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="4">
         <UserInfoBox></UserInfoBox>
       </el-col>
     </el-row>
@@ -18,11 +19,14 @@
 <script>
 import SearchBox from "./Search.vue"
 import UserInfoBox from "./UserInfo.vue"
+import NvaBox from "./Nva.vue"
+
   export default {
     name: "TopBar",
     components: {
       SearchBox,
-      UserInfoBox
+      UserInfoBox,
+      NvaBox
     },
     data() {
       return {
@@ -36,7 +40,7 @@ import UserInfoBox from "./UserInfo.vue"
   img {
       width: 45px;
       height: 45px;
-      // margin: auto 0 auto 10px;
+      margin: auto 0 auto 10px;
       align-items: center;
   }
   #top-box {
@@ -50,4 +54,8 @@ import UserInfoBox from "./UserInfo.vue"
     display: flex;
     align-items: center;
   }
+  .router-link-active {
+    color: blueviolet;
+  }
+
 </style>

@@ -5,8 +5,11 @@ html,body{
     padding: 0;
     margin: 0;
     border: 0;
+    font-family: "Microsoft YaHei", Tahoma, "宋体";
 }
-
+a{
+    text-decoration:none
+}
 .el-row,
 .el-col {
     height: 100%;

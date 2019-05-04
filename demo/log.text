@@ -18,4 +18,18 @@
     2.将默认首页换成自定义的新的界面。
     3.采用ElementUI作为整体的UI框架
       
-##      
+##  2019-05-05    
+    1. 修改了topbar整体样式问题
+    2.了解练习了一下vue-route的命名，不同router-view根据路由显示，以及使用了动画效果的路由显示
+    3.使用了el的走马灯控件，并自定义了样式来覆盖el的原生样式，方式是编写两个style块，一个是scoped，一个没有（即修改全局样式）
+        ++++>>>>可能会影响全局样式，待后续学习和解决。
+    4.由于使用的el中icon少的可怜，便利用'https://www.iconfont.cn/'创建自己需要的图标作为第三方icon插件，主要放在assets/icon文件夹下
+    5.利用ps制作了一个简单的favicon.ico图标（方法需要改进）。
+    6.在UserBox中使用了el的下拉菜单插件
+    7.学习了解了一下vue-loader
+    8.加入了loadding（svg + css）的第三方demo项目用例（来源于codepen）
+    9.引入的animate.css库来实现常用动画
+
+    R:
+    1. @import '/node_modules/animate.css/animate.min.css'; 现在是使用绝对路径才有效，怎样不使用node_modules也能生效？
+    2.之前在 topBa下面建了一个index.js文件，目的是方便引入该目录下的vue组件，本来是生效的，不知改了什么就不生效了？
