@@ -62,8 +62,9 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        //test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+        loader: 'file-loader',          //file-loader 和 url-loader 的区别url-loader可以将资源转成Base64
         options: {
           name: '[name].[ext]?[hash]'
         }
@@ -86,6 +87,7 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
+    //使用插件build时根据模板生成index.html
     new HtmlWebpackPlugin({
       title:'my vue app',
       filename:'index.html',

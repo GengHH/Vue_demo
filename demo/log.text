@@ -1,0 +1,43 @@
+
+#################################################
+###################change log####################
+
+##20190401
+    1.这个是利用vue-cli2.x 和 webpack-simple模板搭建的一个简单的vue测试项目
+    2.此时只包含webpack,webpack-dev-server,vue,vue-template-compiler,babel简单的功能
+
+##20190418
+    1.添加HtmlWebpackPlugin插件，主要是build时候生成新的index.html   
+
+##20190413
+    1.新建一个test分支，用来测试使用。
+
+##20190427
+    1.url-loader可以将图片转为base64字符串，能更快的加载图片，一旦图片过大，
+      就需要使用file-loader的加载本地图片，故url-loader可以设置图片超过多少字节时，使用file-loader加载图片。    
+    2.将默认首页换成自定义的新的界面。
+    3.采用ElementUI作为整体的UI框架
+      
+##  2019-05-05    
+    1. 修改了topbar整体样式问题
+    2.了解练习了一下vue-route的命名，不同router-view根据路由显示，以及使用了动画效果的路由显示
+    3.使用了el的走马灯控件，并自定义了样式来覆盖el的原生样式，方式是编写两个style块，一个是scoped，一个没有（即修改全局样式）
+        ++++>>>>可能会影响全局样式，待后续学习和解决。
+    4.由于使用的el中icon少的可怜，便利用'https://www.iconfont.cn/'创建自己需要的图标作为第三方icon插件，主要放在assets/icon文件夹下
+    5.利用ps制作了一个简单的favicon.ico图标（方法需要改进）。
+    6.在UserBox中使用了el的下拉菜单插件
+    7.学习了解了一下vue-loader
+    8.加入了loadding（svg + css）的第三方demo项目用例（来源于codepen）
+    9.引入的animate.css库来实现常用动画
+
+    R:
+    1. @import '/node_modules/animate.css/animate.min.css'; 现在是使用绝对路径才有效，怎样不使用node_modules也能生效？
+    2.之前在 topBa下面建了一个index.js文件，目的是方便引入该目录下的vue组件，本来是生效的，不知改了什么就不生效了？
+
+## 2019-12-14
+    1.修改了网站的整体布局，增加了通用的footer组件
+    2.按照官网的示例，增加了购物车模块的测试组件和功能，包裹其中的filter（过滤器）功能
+    3.熟悉了一下vuex的具体使用，采用全局的state，和modules（cart，products，imagePanel）的数据管理项
+    4.增加了imagePanel（照片面板）界面，并模拟数据进行，图片的排版显示
+    5.增加了一些静态资源，主要是images
+    6.测试了组件的全局注册方式，新建了global文件加来存放所有的全局vue组件
