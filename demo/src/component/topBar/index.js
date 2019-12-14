@@ -1,4 +1,3 @@
 import TopBar from './Index.vue'
-export default {
-    TopBar
-};
+
+export default TopBar

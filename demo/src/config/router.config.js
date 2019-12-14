@@ -1,9 +1,15 @@
+import Vue from 'vue'
+
 import Home from '../page/home.vue'
 import User from '../component/test/User.vue'
 import Loading from '../component/loading/loading.vue'
+import Count from '../component/global/index'
+import CartApp from  '../component/cart/App.vue'
 
-const H  = {
-    template:'<div>我是从home中过来的</div>'
+import ImagePanel from '../component/img/Image.vue'
+
+const G  = {
+    template: '<button-counter></button-counter>'
 }
 const I  = {
     template:'<div>我是从info中过来的</div>'
@@ -32,17 +38,17 @@ export default {
         },{
             path:'/pz',name:'pz', 
             components: {
-                viewTwo: P
+                viewTwo: CartApp
             }
         },{
             path:'/info',name:'info',
             components: {
-                viewOne: I
+                viewOne: G
             }
         },{
             path:'/star',name:'star',
             components: {
-                viewOne : S
+                viewOne : ImagePanel
             }
         },{
             path:'/test',name:'test', component: Loading

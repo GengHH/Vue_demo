@@ -1,3 +1,3 @@
 <template>
-    <i>woshityongh</i>
+    <div>woshityongh</div>
 </template>

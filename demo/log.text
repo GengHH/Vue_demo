@@ -33,3 +33,11 @@
     R:
     1. @import '/node_modules/animate.css/animate.min.css'; 现在是使用绝对路径才有效，怎样不使用node_modules也能生效？
     2.之前在 topBa下面建了一个index.js文件，目的是方便引入该目录下的vue组件，本来是生效的，不知改了什么就不生效了？
+
+## 2019-12-14
+    1.修改了网站的整体布局，增加了通用的footer组件
+    2.按照官网的示例，增加了购物车模块的测试组件和功能，包裹其中的filter（过滤器）功能
+    3.熟悉了一下vuex的具体使用，采用全局的state，和modules（cart，products，imagePanel）的数据管理项
+    4.增加了imagePanel（照片面板）界面，并模拟数据进行，图片的排版显示
+    5.增加了一些静态资源，主要是images
+    6.测试了组件的全局注册方式，新建了global文件加来存放所有的全局vue组件

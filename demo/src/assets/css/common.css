@@ -6,9 +6,17 @@ html,body{
     margin: 0;
     border: 0;
     font-family: "Microsoft YaHei", Tahoma, "宋体";
+    /* font-family: "Europa", "europa", Avenir, sans-serif; */
+}
+div{
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
 }
 a{
     text-decoration:none
+}
+ul>li{
+    list-style: none;
 }
 .el-row,
 .el-col {

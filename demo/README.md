@@ -1,6 +1,6 @@
 # demo
 
-> first vue test
+> first vue test by myself
 
 ## Build Setup
 
