@@ -7,6 +7,8 @@ import Count from '../component/global/index'
 import CartApp from  '../component/cart/App.vue'
 
 import ImagePanel from '../component/img/Image.vue'
+import RegisterBox from '../component/login/login.vue'
+import Reg from '../component/login/register.vue'
 
 const G  = {
     template: '<button-counter></button-counter>'
@@ -52,7 +54,20 @@ export default {
             }
         },{
             path:'/test',name:'test', component: Loading
-        },{
+        },
+        {
+            path:'/user/login',name:'login', 
+            components: {
+                loginView: RegisterBox
+            }
+        },
+        {
+            path:'/user/reg',name:'reg', 
+            components: {
+                loginView:Reg
+            }
+        },
+        {
             path:'*', component: Home
         }
     ]

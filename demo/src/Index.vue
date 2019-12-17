@@ -2,7 +2,7 @@
     <div id="container">
         <!-- <div>{{count}}</div> -->
         <TopBar inputProp="hahhahahhahahhahhah"/>
-        <div>
+        <div id="content">
             <!-- <span>{{this.$store.state.count}}</span> -->
             <router-view></router-view>
             <transition enter-active-class="animated bounceInleft" leave-active-class="animated bounceOutRight">
@@ -11,6 +11,9 @@
             <transition enter-active-class="animated bounceOutRight" leave-active-class="animated bounceInleft">
                 <router-view name="viewTwo"></router-view>
             </transition>
+
+            <router-view name="loginView"></router-view>
+
             <Footer />
         </div>
     </div>
@@ -45,6 +48,10 @@ export default {
     }
     h1{
         text-align:center;
+    }
+    #content{
+        height: calc(100vh - 60px);
+        width: 100%;
     }
 </style>
 

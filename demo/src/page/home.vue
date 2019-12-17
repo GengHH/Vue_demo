@@ -51,10 +51,10 @@ export default {
 
 <style lang="scss" scoped>
 #carouselBox {
-  height: calc(100vh - 60px);
+  //height: calc(100vh - 60px);
   position: relative;
   width: 100%;
-  // height: 100%;
+  height: 100%;
   top: 0;
   //height: calc(100vh - 60px);
 }

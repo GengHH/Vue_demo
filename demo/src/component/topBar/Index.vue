@@ -10,16 +10,19 @@
         <SearchBox searchBoxMsg="hahahahah"></SearchBox>
       </el-col>
       <el-col :span="4">
-        <UserInfoBox></UserInfoBox>
+        <UserInfoBox v-if="isLogin"></UserInfoBox>
+        <div id="loginNva" v-else>
+          <router-link to="/user/login">Login</router-link><span>|</span><router-link to="/user/register">register</router-link>
+        </div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import SearchBox from "./Search.vue"
-import UserInfoBox from "./UserInfo.vue"
-import NvaBox from "./Nva.vue"
+import SearchBox from "./Search.vue";
+import UserInfoBox from "./UserInfo.vue";
+import NvaBox from "./Nva.vue";
 
 export default {
   name: "TopBar",
@@ -32,6 +35,11 @@ export default {
     return {
       test: "123"
     };
+  },
+  computed: {
+    isLogin: function() {
+      return localStorage.getItem("user") ? true : false;
+    }
   }
 };
 </script>
@@ -62,5 +70,18 @@ img {
 }
 .router-link-active {
   color: #e0604f;
+}
+#loginNva {
+  margin:0 auto;
+}
+#loginNva>span {
+  padding: 0 10px;
+  color: #aaa;
+}
+#loginNva>a {
+  color:#48e2b0;
+}
+#loginNva> .router-link-active {
+  color:#e0604f;
 }
 </style>

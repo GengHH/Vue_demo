@@ -15,7 +15,10 @@ Vue.config.productionTip = false
 Vue.filter('currency',currency)
 Vue.use(VueRouter)   //使用elementUI组件
 Vue.use(ElemelntUI)   //使用elementUI组件
-const router =  new  VueRouter(routes)
+const router =  new  VueRouter({
+      mode:'history',
+      routes : routes.routes
+    })  //添加路由的配置，并指定路由的模式为history(TODO),因为vue-router默认的是hash模式
 new Vue({
   router,
   store,

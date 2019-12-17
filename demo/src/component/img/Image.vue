@@ -8,7 +8,7 @@
     <el-row :gutter="20">
         <el-col :span="6"  v-for="(img,index) in myImages" :key="index">
             <div class="grid-content bg-purple">
-                <img :src= "img.path" :alt= "未加载" :title="img.title"/>
+                <img :src= "img.path" alt= "未加载" :title="img.title"/>
             </div>
         </el-col>
     </el-row>   

@@ -10,7 +10,7 @@
       <el-dropdown-item>收藏夹</el-dropdown-item>
       <el-dropdown-item>个人信息</el-dropdown-item>
       <el-dropdown-item disabled>认证</el-dropdown-item>
-      <el-dropdown-item divided>退出</el-dropdown-item>
+      <el-dropdown-item divided @click.native="logout">退出</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
@@ -33,7 +33,11 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    logout(){
+      this.$store.dispatch('UserLogout',null)
+    }
+  },
 
   watch: {}
 };
