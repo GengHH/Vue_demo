@@ -62,7 +62,7 @@ export default {
             }
         },
         {
-            path:'/user/reg',name:'reg', 
+            path:'/user/register',name:'reg', 
             components: {
                 loginView:Reg
             }
