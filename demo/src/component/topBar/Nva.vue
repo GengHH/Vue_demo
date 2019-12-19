@@ -47,8 +47,9 @@ export default {
   color: #fff;
   background-color: #409eff;
   border-radius: 15px;
-  animation: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: color .5s ease-in-out,background-color 1s ease-in-out;
 }
+
 #navBox {
   width: 75%;
   height: 100%;

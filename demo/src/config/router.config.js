@@ -10,6 +10,8 @@ import ImagePanel from '../component/img/Image.vue'
 import RegisterBox from '../component/login/login.vue'
 import Reg from '../component/login/register.vue'
 
+import Footer from '../component/footer/footer.vue'
+
 const G  = {
     template: '<button-counter></button-counter>'
 }
@@ -31,29 +33,33 @@ const T  = {
 export default {
     routes: [
         {
-            path: '/home',name:'home',component: Home
+            path: '/home',name:'home',components: { indexView:Home }
         },{
             path: '/style',name:'style',
             components: {
-                viewTwo: S
+                indexView : S,
+                footerView: Footer
             }
         },{
-            path:'/pz',name:'pz', 
+            path:'/pz',name:'pz',
             components: {
-                viewTwo: CartApp
+                indexView : CartApp,
+                footerView: Footer
             }
         },{
             path:'/info',name:'info',
             components: {
-                viewOne: G
+                indexView : I,
+                footerView: Footer
             }
         },{
             path:'/star',name:'star',
             components: {
-                viewOne : ImagePanel
+                indexView : ImagePanel,
+                footerView : Footer
             }
         },{
-            path:'/test',name:'test', component: Loading
+            path:'/test',name:'test', components: {indexView : Loading}
         },
         {
             path:'/user/login',name:'login', 
@@ -68,7 +74,7 @@ export default {
             }
         },
         {
-            path:'*', component: Home
+            path:'*', components: { indexView : Home }
         }
     ]
 }

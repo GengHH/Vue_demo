@@ -91,7 +91,7 @@ export default {
 </script>
 <style scoped>
 #loginBox {
-  height: 100%;
+  height: calc(100vh - 60px);
   widows: 100%;
   position: relative;
 }

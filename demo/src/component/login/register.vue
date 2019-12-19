@@ -61,7 +61,7 @@ export default {
 </script>
 <style scoped>
 #regBox {
-  height: 100%;
+  height: calc(100vh - 60px);
   widows: 100%;
   position: relative;
 }
