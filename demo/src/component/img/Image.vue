@@ -4,14 +4,20 @@
         <ul v-for="(img,index) in myImages" :key="index">
             <img :src= "img.path" :alt= "img.title" />
         </ul>
-    </ul> -->
+    </ul>-->
     <el-row :gutter="20">
-        <el-col :span="6"  v-for="(img,index) in myImages" :key="index">
-            <div class="grid-content bg-purple">
-                <img :src= "img.path" alt= "未加载" :title="img.title"/>
-            </div>
-        </el-col>
-    </el-row>   
+      <el-col :span="6" v-for="(img,index) in myImages" :key="index">
+        <div class="grid-content bg-purple">
+          <img :src="img.path" alt="未加载" :title="img.title" />
+          <div class="imgMark animated">
+              <el-col :span="24" class="imgMarkHeader">123</el-col>
+              <el-col :span="24" class="imgMarkBody">456</el-col>
+              <el-col :span="24" class="imgMarkFooter">789</el-col>
+          </div>
+        </div>
+        <div class="introduction">{{ img.title }}</div>
+      </el-col>
+    </el-row>
     <!-- 循环动态生成element栅格排版 -->
     <!-- <el-row gutter="18">
         <el-col :span="6">
@@ -32,41 +38,91 @@
                 </div>
             </el-card>
         </el-col>
-    </el-row> -->
+    </el-row>-->
   </div>
 </template>
 
 <script>
-import {  mapState} from 'vuex'
+import { mapState } from "vuex";
 export default {
-    name: "ImagePanel",
-    data: function(){
-        return {
-            publicPath : "/"
-        }
-    },
-    computed : mapState({
-        myImages : state => state.allImages.allImage
-    }),
-    created () {
-        this.$store.dispatch('allImages/getAllImages')
-    }
-}
+  name: "ImagePanel",
+  data: function() {
+    return {
+      publicPath: "/"
+    };
+  },
+  computed: mapState({
+    myImages: state => state.allImages.allImage
+  }),
+  created() {
+    this.$store.dispatch("allImages/getAllImages");
+  },
+  mounted() {
+    $(".grid-content").mouseover(function() {
+      $(this)
+        .children(".imgMark")
+        .show()
+        .removeClass("fadeOutLeft faster")
+        .addClass("fadeInLeft");
+    });
+    $(".grid-content").mouseout(function() {
+        $(this)
+        .children(".imgMark")
+        .removeClass("fadeInLeft")
+        .addClass("fadeOutLeft faster");
+    });
+  }
+};
 </script>
 
 <style scoped>
-    #imageBox {
-        width: 94%;
-        margin: 0 auto 130px;
-    }
-    .grid-content {
-        height: 300px;
-    }
-    img {
-        width: 100%;
-        height: 98%;
-        margin-top: 1%;
-        margin-bottom: 1%;
-    }
-
+#imageBox {
+  width: 94%;
+  margin: 0 auto 130px;
+}
+.grid-content {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 99%;
+  margin-top: 1%;
+  transition: all 0.5s ease-in-out;
+  /* margin-bottom: 1%; */
+}
+.grid-content:hover > img {
+   transform: scale(1.2);
+}
+.grid-content:hover + .introduction {
+   background-color: burlywood;
+}
+.introduction {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 10px;
+}
+.imgMark {
+  display: none;
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  background-color: #0000007a;
+  top: 1%;
+  left: 0px;
+}
+.imgMarkHeader, .imgMarkFooter{
+    width: 100%;
+    height: 20%;
+    text-align: right;
+}
+.imgMarkBody{
+    width: 100%;
+    height: 60%;
+    text-align: center;
+}
 </style>

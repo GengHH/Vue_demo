@@ -9,8 +9,9 @@
         enter-active-class="animated bounceOutRight"
         leave-active-class="animated bounceInleft"
       >
-        <router-view name="loginView"></router-view>
+        <router-view name="animatedView"></router-view>
       </transition>
+      <router-view name="loginView" class="animated fadeInLeft"></router-view>
       <router-view name="footerView"></router-view>
     </div>
   </div>
@@ -49,6 +50,7 @@ h1 {
 #content {
   //height: calc(100vh - 60px);
   width: 100%;
+  background-color: #f4f7f6;
 }
 </style>
 

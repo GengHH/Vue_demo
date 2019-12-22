@@ -1,4 +1,5 @@
 import { RANDOM_IDENTIFY_CODE } from './utilTypes'
+//自定义的工具函数
 export const commonUtils = {
     [RANDOM_IDENTIFY_CODE](randomFlag, min, max){
         let str = "",
@@ -19,4 +20,18 @@ export const commonUtils = {
         }
         return str
     }
+}
+//使用animate.css时，通用的动画增加和删除的工具函数
+export const animateCSS = function(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
 }

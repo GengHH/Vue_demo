@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -73,7 +74,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.js',  //'vue/dist/vue.esm.js'   可以选择使用npm下载下来的某个类型（版本）的库
+      '@u' : path.resolve(__dirname,"src/utils")  
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -95,6 +97,10 @@ module.exports = {
       inject: true,
       minify: true,
       hash: false
+    }),
+    new webpack.ProvidePlugin({  //使用该配置后，可以使用全局的第三方库，不需要再在每个页面import来引入
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ]
 }

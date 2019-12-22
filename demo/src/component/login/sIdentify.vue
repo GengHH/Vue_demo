@@ -4,8 +4,8 @@
   </div>
 </template>
 <script>
-import { RANDOM_IDENTIFY_CODE } from '../../utils/utilTypes'
-import { commonUtils } from '../../utils/index'
+import { RANDOM_IDENTIFY_CODE } from '@u/utilTypes'
+import { commonUtils } from '@u/index'
 export default {
   name: "SIdentify",
   props: {},
