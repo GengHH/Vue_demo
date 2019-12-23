@@ -8,14 +8,17 @@
     <el-row :gutter="20">
       <el-col :span="6" v-for="(img,index) in myImages" :key="index">
         <div class="grid-content bg-purple">
-          <img :src="img.path" alt="未加载" :title="img.title" />
+          <img :src="img.avatar" alt="未加载" :title="img.title" />
           <div class="imgMark animated">
-              <el-col :span="24" class="imgMarkHeader">123</el-col>
-              <el-col :span="24" class="imgMarkBody">456</el-col>
-              <el-col :span="24" class="imgMarkFooter">789</el-col>
+            <el-col :span="24" class="imgMarkHeader">123</el-col>
+            <el-col :span="24" class="imgMarkBody">456</el-col>
+            <el-col :span="24" class="imgMarkFooter">789</el-col>
           </div>
         </div>
-        <div class="introduction">{{ img.title }}</div>
+        <div class="introduction">
+          <div>{{ img.title }}</div>
+          <img class="avatar" :src="img.avatar" alt />
+        </div>
       </el-col>
     </el-row>
     <!-- 循环动态生成element栅格排版 -->
@@ -56,6 +59,7 @@ export default {
   }),
   created() {
     this.$store.dispatch("allImages/getAllImages");
+    //this.$store.dispatch("GetImgPanel");
   },
   mounted() {
     $(".grid-content").mouseover(function() {
@@ -66,7 +70,7 @@ export default {
         .addClass("fadeInLeft");
     });
     $(".grid-content").mouseout(function() {
-        $(this)
+      $(this)
         .children(".imgMark")
         .removeClass("fadeInLeft")
         .addClass("fadeOutLeft faster");
@@ -93,10 +97,10 @@ img {
   /* margin-bottom: 1%; */
 }
 .grid-content:hover > img {
-   transform: scale(1.2);
+  transform: scale(1.2);
 }
 .grid-content:hover + .introduction {
-   background-color: burlywood;
+  background-color: burlywood;
 }
 .introduction {
   width: 100%;
@@ -115,14 +119,23 @@ img {
   top: 1%;
   left: 0px;
 }
-.imgMarkHeader, .imgMarkFooter{
-    width: 100%;
-    height: 20%;
-    text-align: right;
+.imgMarkHeader,
+.imgMarkFooter {
+  width: 100%;
+  height: 20%;
+  text-align: right;
 }
-.imgMarkBody{
-    width: 100%;
-    height: 60%;
-    text-align: center;
+.imgMarkBody {
+  width: 100%;
+  height: 60%;
+  text-align: center;
+}
+.avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 </style>

@@ -1,5 +1,5 @@
 const data = require('./mock-data')
-const imgData = require('./mock-img-data')
+//const getImgPanel = require('./mock-img-data')
 const LATENCY = 16
 
 export function getAllMessages (cb) {
@@ -26,21 +26,22 @@ export function createMessage ({ text, thread }, cb) {
 }
 
 //mocking image panel datas
-export function getAllImages (cb) {
-  setTimeout(() => {
-    cb(imgData)
-  }, LATENCY)
-}
+// export function getAllImages (cb) {
+//   setTimeout(() => {
+//     cb(imgData)
+//   }, LATENCY)
+//   cb(getImgPanel())
+// }
 
-export function createImages ({ text, thread }, cb) {
-  const timestamp = Date.now()
-  const id = 'i_' + timestamp
-  const imageData = {
-    id,
-    title:timestamp + 'img',
-    path:'/api/assets/imagesPanel/'+timestamp+'.jpg'
-  }
-  setTimeout(function () {
-    cb(imageData)
-  }, LATENCY)
-}
+// export function createImages ({ text, thread }, cb) {
+//   const timestamp = Date.now()
+//   const id = 'i_' + timestamp
+//   const imageData = {
+//     id,
+//     title:timestamp + 'img',
+//     path:'/api/assets/imagesPanel/'+timestamp+'.jpg'
+//   }
+//   setTimeout(function () {
+//     cb(imageData)
+//   }, LATENCY)
+// }

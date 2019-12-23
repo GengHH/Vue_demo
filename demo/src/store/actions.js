@@ -1,45 +1,59 @@
-import api from "../api/Login"
-import { USER_SIGNIN, USER_SIGNOUT, USER_REG } from "./type"
+import api from "../api/Login";
+import imgApi from "../api/mock-img-data";
+import { USER_SIGNIN, USER_SIGNOUT, USER_REG } from "./type";
 
 export const UserLogin = ({ commit }, data) => {
   api
     .localLogin(data)
     .then(function(response) {
-      console.log('response',response)
+      console.log("response", response);
       if (response.data.type == true) {
-        commit(USER_SIGNIN, response.data.token)
-        window.location = "/home"
+        commit(USER_SIGNIN, response.data.token);
+        window.location = "/home";
       } else {
-        window.location = "/api/login"
+        window.location = "/api/login";
       }
     })
     .catch(function(error) {
-      console.log('error',error);
-    })
-}
+      console.log("error", error);
+    });
+};
 
 export const UserLogout = ({ commit }, data) => {
   api
     .localLogout(data)
     .then(function(response) {
       commit(USER_SIGNOUT);
-      window.location = "/home"
+      window.location = "/home";
     })
     .catch(function(error) {
       console.log(error);
-    })
-}
+    });
+};
 
 export const UserReg = ({ commit }, data) => {
   api
     .localReg(data)
     .then(function(response) {
       if (response.data.type == true) {
-        commit(USER_REG, response.data.token)
-        window.location = "/home"
+        commit(USER_REG, response.data.token);
+        window.location = "/home";
       }
     })
     .catch(function(error) {
-      console.log(error)
-    })
-}
+      console.log(error);
+    });
+};
+//通过服务器获取图片数据
+// export const GetImgPanel = ({ commit }, data) => {
+//   imgApi
+//     .getImgPanel(data)
+//     .then(function(response) {
+//       if (response.data) {
+//         commit("imagePanel/setAllImages", response.data);
+//       }
+//     })
+//     .catch(function(error) {
+//       console.log(error);
+//     });
+// };
