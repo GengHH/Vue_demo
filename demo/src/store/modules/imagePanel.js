@@ -17,8 +17,8 @@ const actions = {
     imagePanelApi
       .getImgPanel(data)
       .then(function(response) {
-        if (response.data.data) {
-          commit("setAllImages", response.data.data);
+        if (response.data.imgList) {
+          commit("setAllImages", response.data.imgList);
         }
       })
       .catch(function(error) {

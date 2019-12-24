@@ -8,7 +8,7 @@
     <el-row :gutter="20">
       <el-col :span="6" v-for="(img,index) in myImages" :key="index">
         <div class="grid-content bg-purple">
-          <img :src="img.avatar" alt="未加载" :title="img.title" />
+          <img :src="img.path" alt="未加载" :title="img.title" />
           <div class="imgMark animated">
             <el-col :span="24" class="imgMarkHeader">123</el-col>
             <el-col :span="24" class="imgMarkBody">456</el-col>
@@ -16,8 +16,18 @@
           </div>
         </div>
         <div class="introduction">
-          <div>{{ img.title }}</div>
-          <img class="avatar" :src="img.avatar" alt />
+          <div class="title">{{ img.title }}</div>
+          <div class="detail">
+            <el-col :span="4">
+              <img class="avatar" :src="img.avatar" alt />
+            </el-col>
+            <el-col :span="10">
+              <div>{{ img.name }}</div>
+            </el-col>
+            <el-col :span="10">
+              <h4 class="date">{{ img.createTime }}</h4>
+            </el-col>
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -99,9 +109,9 @@ img {
 .grid-content:hover > img {
   transform: scale(1.2);
 }
-.grid-content:hover + .introduction {
+/* .grid-content:hover + .introduction {
   background-color: burlywood;
-}
+} */
 .introduction {
   width: 100%;
   height: 100px;
@@ -113,10 +123,10 @@ img {
 .imgMark {
   display: none;
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   background-color: #0000007a;
-  top: 1%;
+  top: 0px;
   left: 0px;
 }
 .imgMarkHeader,
@@ -130,12 +140,32 @@ img {
   height: 60%;
   text-align: center;
 }
+.title {
+  padding: 10px;
+  border-bottom: 1px dotted #eee;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+.detail {
+  position: relative;
+  line-height: 50px;
+}
 .avatar {
   float: left;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-left: 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+}
+.date {
+  float: right;
+  margin-right: 10px;
+  font-weight: normal;
+  margin: 0;
+  line-height: 50px;
+  color: #ccc;
 }
 </style>
